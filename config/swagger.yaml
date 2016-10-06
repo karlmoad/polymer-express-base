@@ -1,0 +1,56 @@
+swagger: '2.0'
+info:
+  title: Authentication API
+  version: 1.0.0
+basePath: /api
+schemes:
+  - http
+paths:
+  /login:
+    post:
+      tags:
+        - authentication
+      summary: submit a request ticket
+      operationId: authenticate
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Request ticket object to be submitted
+          required: true
+          schema:
+            $ref: '#/definitions/LoginRequest'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Token'
+        '400':
+          description: Invalid Request
+        '401':
+          description: Unauthorized
+definitions:
+  LoginRequest:
+    type: object
+    properties:
+      userid:
+        type: string
+      password:
+        type: string
+  Token:
+    type: object
+    properties:
+      id:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+      token:
+        type: string
+      expires:
+        type: string
+        format: date-time

@@ -82,6 +82,8 @@
         }
     </script>
 
+
+    <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
     <link rel="import" href="/src/login-app.html">
 
     <style>
@@ -95,7 +97,16 @@
     </style>
 </head>
 <body>
-<login-app></login-app>
+
+<iron-ajax auto
+           url="/api/login"
+           body={"userid":"testp","password":"jdsfhkjasbh"}
+           handle-as="json"
+           content-type="application/json"
+           method="POST"
+           last-response="{{loginResponse}}"></iron-ajax>
+
+    <login-app message="Welcome" user="{{loginResponse}}"></login-app>
 <!-- Built with love using Polymer Starter Kit -->
 </body>
 </html>

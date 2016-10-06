@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<link rel="import" href="../bower_components/polymer/polymer.html">
 
-</body>
-</html>
+
+<dom-module id="login-app">
+    <template>
+        <style>
+            :host {
+                display:block;
+            }
+
+            .centered {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -50px;
+                margin-left: -100px;
+            }
+
+        </style>
+
+        <div class="centered"><b>{{message}}: </b>{{user.username}}</div>
+
+    </template>
+    <script>
+        Polymer({
+           is: 'login-app',
+           properties: {
+                message: {
+                    type: String,
+                    reflectToAttribute: true,
+                    notify: true
+                },
+                user:{
+                    type: Object,
+                    reflectToAttribute: true,
+                    notify: true
+                }
+           }
+        });
+    </script>
+</dom-module>
