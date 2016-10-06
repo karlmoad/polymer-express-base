@@ -1,3 +1,10 @@
+# Jetbrains project elements
+.idea
+*.iml
+
+# bower
+bower_components
+
 # Logs
 logs
 *.log

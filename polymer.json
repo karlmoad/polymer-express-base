@@ -1,0 +1,12 @@
+{
+"entrypoint": "index.html",
+"shell": "src/my-app.html",
+"sourceGlobs": [
+"src/**/*",
+"images/**/*",
+"bower.json"
+],
+"includeDependencies": [
+"bower_components/webcomponentsjs/webcomponents-lite.min.js"
+]
+}
