@@ -97,6 +97,7 @@
     </style>
 </head>
 <body>
+<template is="dom-bind">
 
 <iron-ajax auto
            url="/api/login"
@@ -104,9 +105,10 @@
            handle-as="json"
            content-type="application/json"
            method="POST"
-           last-response="{{loginResponse}}"></iron-ajax>
+           last-response="{{ajaxResponse}}"></iron-ajax>
 
-    <login-app message="Welcome" user="{{loginResponse}}"></login-app>
+    <login-app message="Welcome" user=[[ajaxResponse]]></login-app>
 <!-- Built with love using Polymer Starter Kit -->
+</template>
 </body>
 </html>
